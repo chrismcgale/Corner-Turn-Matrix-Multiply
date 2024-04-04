@@ -2,7 +2,7 @@
 // Array 1 is the rowPtrs, Array 2 is the colIdx, and Array 3 is the value
 struct CSRMatrix {
     int numNonZeros;
-    unsigned int** rowPtrs;
+    unsigned int* rowPtrs;
     unsigned int* colIdx;
     float* value;
 }

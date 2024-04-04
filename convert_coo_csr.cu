@@ -38,6 +38,8 @@ __host__ CSRMatrix convert_coo_csr(COOMatrix cooMatrix) {
 
     cudaFree(filtered);
     cudaFree(summed);
+
+    return {numNonZeros, summed, cooMatrix.colIdx, cooMatrix.value};
 }
 
 
