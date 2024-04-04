@@ -29,16 +29,16 @@ __global__ void matrixMultiplyKernel(float* M, float* N, float* P, int width) {
             // Index for N used to be '(ph*TILE_WIDTH + ty)*width + col' changed to improve memory coalescing due to column-major layout, 
             Nds[ty][tx] = N[col*width + ph*TILE_WIDTH + ty];
         } else {
-            Nds[ty][tx] = 0.0f;
+            Nds[ty][tx] = 0.0;
         }
 
-        __synchthreads();
+        __syncthreads();
 
         // Once stored in shared memory, coalescing is no longer an issue (due to size, locality, etc.)
         for (int k = 0; k < TILE_WIDTH; k++) {
             pValue += Mds[ty][k] * Nds[k][tx];
         }
-        __synchThreads();
+        __syncthreads();
     }
     P[row*width + col] = pValue;
 }
