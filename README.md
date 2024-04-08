@@ -1,7 +1,9 @@
-A parrallel algorithm to multiply two Matrices M and N where N is stored in column-major layout. Takes advantage of memory coalescing and tiling.
+<h1>Sparsifyl - Work in Progress</h1>
+
+The idea of this project is to combine Karger graph sparsiciation and efficient min-cut into a library for blazingly fast graph segmentation. We'll see what other sparsification algorithms / ideas are added alomg the way.
 
 
-As described in 'Programming Massively Parallel Processors, Ch 6 Page 130 - Performance Considerations.
-
-
-Sparse Matrix multiplication formats and algorithms as described in Ch 14
+Some sources
+https://cs.uwaterloo.ca/~lapchi/cs466/notes/L03.pdf
+https://people.csail.mit.edu/karger/Papers/flow2.pdf
+https://arxiv.org/pdf/1908.11829v3.pdf
